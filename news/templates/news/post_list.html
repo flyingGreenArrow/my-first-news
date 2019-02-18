@@ -6,17 +6,14 @@
         <div>
             <h1><a href="/">News portal</a></h1>
         </div>
-        <br>
-        <div>
-            <p>published: 18.02.2019, 17:02</p>
-            <h2><a href="">First post</a></h2>
-            <p>Hi, this is the first post on my page.</p>
-        </div>
-        <br>
-        <div>
-            <p>published: 18.02.2019, 17:03</p>
-            <h2><a href="">Launch bounce</a></h2>
-            <p>Hi there! This is the post from orange ballon.</p>
-        </div>
+        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+        
     </body>
 </html>
