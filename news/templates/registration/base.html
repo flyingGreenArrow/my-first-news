@@ -16,17 +16,16 @@
         </div>
         <div class="navnavbar">
             {% if user.is_authenticated %}
-                Hi, {{ user.username }}!
-                <a href="{% url 'logout' %}">Log out</a>
-            {% else %}
                 <a href="{% url 'login' %}">Login</a>
+            {% else %}
+                <p> Hello, {{ user.username }}</p>
             {% endif %}
         </div>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
+                    {% block content %}
+                    {% endblock %}
                 </div>
             </div>
         </div>

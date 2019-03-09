@@ -1,9 +1,9 @@
 from django import forms 
-from .models import Post
+from .models import Post, User_sys
 
 
 class Post_Form(forms.ModelForm):
-    
     class Meta:
-        model=Post
-        fields=('title', 'text',)
+        model = Post
+        fields = ('title', 'text',)
+

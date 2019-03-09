@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# The order of our urls matters here because Django reads this file top-to-bottom
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
     path(r'', include('news.urls')),
 ]
